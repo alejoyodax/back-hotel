@@ -1,4 +1,4 @@
-from db.cliente_db import get_cliente
+from db.cliente_db import ClienteInDB, get_cliente
 from models.user_models import ClienteIn, ClienteOut, ClienteOutSaldo
 import datetime
 from fastapi import FastAPI, HTTPException
@@ -37,7 +37,9 @@ async def get_saldo(cliente_ingresado: str):
 
     cliente_out = ClienteOutSaldo(**cliente_en_bd.dict())
 
-    return cliente_out
+    info_cliente = "INFORMACIÓN DEL CLIENTE : " + str(cliente_en_bd)
+    
+    return info_cliente, cliente_out
 
 
 #@hotel.get("/user/")

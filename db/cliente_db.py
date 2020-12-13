@@ -43,18 +43,18 @@ usuarios_db = {
             "observaciones":"muy cansón",
             "saldo":270000}),
 
-    "juanito": ClienteInDB(**{
-            "cedula":"12345",
+    "cristiansito": ClienteInDB(**{
+            "cedula":"123456789",
             "contrasena":"asd123",
-            "username":"juanito",
-            "nombre":"juan",
-            "apellido":"asdasd",
-            "apellido2":"asdasd",
+            "username":"cristiansito",
+            "nombre":"cristian",
+            "apellido":"camilo",
+            "apellido2":"murcia",
             "direccion":"calle falsa 999",
             "telefono":1111111111,
-            "email":"juanito@gmail.com",
-            "observaciones":"muy cansón",
-            "saldo":270000})
+            "email":"cristiansito@gmail.com",
+            "observaciones":"muy cansón el hp",
+            "saldo":0})
 
 
 

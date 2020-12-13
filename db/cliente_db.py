@@ -41,7 +41,23 @@ usuarios_db = {
             "telefono":1111111111,
             "email":"juanito@gmail.com",
             "observaciones":"muy cansón",
-            "saldo":270000})  
+            "saldo":270000}),
+
+    "juanito": ClienteInDB(**{
+            "cedula":"12345",
+            "contrasena":"asd123",
+            "username":"juanito",
+            "nombre":"juan",
+            "apellido":"asdasd",
+            "apellido2":"asdasd",
+            "direccion":"calle falsa 999",
+            "telefono":1111111111,
+            "email":"juanito@gmail.com",
+            "observaciones":"muy cansón",
+            "saldo":270000})
+
+
+
 }
 
 

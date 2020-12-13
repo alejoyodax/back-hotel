@@ -10,7 +10,7 @@ hotel = FastAPI()
 
 @hotel.get("/") #carpeta raiz del sitio                                        
 async def home():   # funcion home asíncrona
-    return {"message": "Sistema de reservas hotelaaaaa"} # muestra un mensaje en la carpeta raiz del sitio
+    return {"message": "Sistema de reservas hotel"} # muestra un mensaje en la carpeta raiz del sitio
 
 @hotel.post("/user/auth")
 async def auth_user(cliente_ingresado: ClienteIn):

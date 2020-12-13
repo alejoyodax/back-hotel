@@ -1,5 +1,6 @@
-from db.cliente_db import ClienteInDB, get_cliente
-from models.user_models import ClienteIn, ClienteOut, ClienteOutSaldo
+from models.update_models import UpdateIn
+from db.cliente_db import ClienteInDB, get_cliente, usuarios_db
+from models.user_models import ClienteIn, ClienteOut
 import datetime
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -12,7 +13,7 @@ hotel = FastAPI()
 async def home():   # funcion home asíncrona
     return {"message": "Sistema de reservas hotel"} # muestra un mensaje en la carpeta raiz del sitio
 
-@hotel.post("/user/auth")
+@hotel.post("/cliente/auth")
 async def auth_user(cliente_ingresado: ClienteIn):
 
     cliente_en_bd = get_cliente(cliente_ingresado.username)
@@ -27,23 +28,40 @@ async def auth_user(cliente_ingresado: ClienteIn):
     return [{"Autenticado": True}, cliente_en_bd] # si quiero mostrar solo el email y el celular
 
 
-@hotel.get("/user/saldo/{cliente_ingresado}")
-async def get_saldo(cliente_ingresado: str):
+@hotel.get("/cliente/info/{cliente_ingresado}")
+async def get_info_cliente(cliente_ingresado: str):
 
     cliente_en_bd = get_cliente(cliente_ingresado)
 
     if cliente_en_bd == None:
         raise HTTPException(status_code=404, detail="El usuario no existe")
 
-    cliente_out = ClienteOutSaldo(**cliente_en_bd.dict())
-
-    info_cliente = "INFORMACIÓN DEL CLIENTE : " + str(cliente_en_bd)
+    cliente_out = ClienteOut(**cliente_en_bd.dict())
     
-    return info_cliente, cliente_out
+    return cliente_out
+
+@hotel.put("/cliente/update")
+async def update_info_cliente(cliente_ingresado: UpdateIn):
+
+    cliente_en_bd = get_cliente(cliente_ingresado.username)
+
+    if cliente_en_bd == None:
+        raise HTTPException(status_code=404, detail="El usuario no existe")
+    
+    cliente_en_bd.username = cliente_ingresado.username
+    cliente_en_bd.telefono = cliente_ingresado.telefono
+    cliente_en_bd.email = cliente_ingresado.email
+
+    return {"Cliente actualizado": True}
+        
+@hotel.get("/cliente/all")
+async def show_all_users():
+    return usuarios_db
+
 
 
 #@hotel.get("/user/")
 
-
+# uvicorn main:hotel --reload
 
 

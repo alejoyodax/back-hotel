@@ -12,7 +12,6 @@ class ClienteInDB(BaseModel):
     telefono: int
     email: str
     observaciones: str
-    saldo: int
 
 usuarios_db = Dict[int, ClienteInDB]
 
@@ -25,46 +24,39 @@ usuarios_db = {
             "apellido":"silva",
             "apellido2":"jaramillo",
             "direccion":"calle falsa 123",
-            "telefono":3194212354,
+            "telefono":333333,
             "email":"alejoyodax@gmail.com",
-            "observaciones":"alérgico al agua",
-            "saldo":450000}),
+            "observaciones":"alérgico al agua"}),
 
     "juanito": ClienteInDB(**{
             "cedula":"12345",
             "contrasena":"asd123",
             "username":"juanito",
             "nombre":"juan",
-            "apellido":"asdasd",
-            "apellido2":"asdasd",
-            "direccion":"calle falsa 999",
-            "telefono":1111111111,
+            "apellido":"perez",
+            "apellido2":"arnoldo",
+            "direccion":"calle 23 12a 45",
+            "telefono":55555555,
             "email":"juanito@gmail.com",
-            "observaciones":"muy cansón",
-            "saldo":270000}),
+            "observaciones":"muy cansón"}),
 
     "cristiansito": ClienteInDB(**{
             "cedula":"123456789",
-            "contrasena":"asd123",
-            "username":"cristiansito",
+            "contrasena":"cristiansito",
+            "username":"critsman",
             "nombre":"cristian",
             "apellido":"camilo",
             "apellido2":"murcia",
-            "direccion":"calle falsa 999",
-            "telefono":1111111111,
+            "direccion":"avenida siempre viva 123",
+            "telefono":9999999,
             "email":"cristiansito@gmail.com",
-            "observaciones":"muy cansón el hp",
-            "saldo":0})
-
-
+            "observaciones":"muy cansón el hp"})
 
 }
-
 
 def get_cliente(username:str):
     if username in usuarios_db.keys():
         return usuarios_db[username]
     else:
         return None
-
 

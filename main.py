@@ -24,7 +24,7 @@ async def auth_user(cliente_ingresado: ClienteIn):
     if cliente_ingresado.contrasena != cliente_en_bd.contrasena:
         return {"Cliente autenticado": False}
 
-    return [{"Autenticado": True}, cliente_en_bd.email, cliente_en_bd.telefono] # si quiero mostrar solo el email y el celular
+    return [{"Autenticado": True}, cliente_en_bd] # si quiero mostrar solo el email y el celular
 
 
 @hotel.get("/user/saldo/{cliente_ingresado}")

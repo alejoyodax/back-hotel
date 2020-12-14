@@ -50,7 +50,7 @@ usuarios_db = {
             "direccion":"avenida siempre viva 123",
             "telefono":9999999,
             "email":"cristiansito@gmail.com",
-            "observaciones":"muy cansón el hp"})
+            "observaciones":"muy cansón"})
 
 }
 

@@ -26,7 +26,7 @@ usuarios_db = {
             "direccion":"calle falsa 123",
             "telefono":333333,
             "email":"alejoyodax@gmail.com",
-            "observaciones":"alérgico al agua"}),
+            "observaciones":"alergia al maní"}),
 
     "juanito": ClienteInDB(**{
             "cedula":"12345",
@@ -38,7 +38,7 @@ usuarios_db = {
             "direccion":"calle 23 12a 45",
             "telefono":55555555,
             "email":"juanito@gmail.com",
-            "observaciones":"muy cansón"}),
+            "observaciones":"ninguna"}),
 
     "cristiansito": ClienteInDB(**{
             "cedula":"123456789",
@@ -50,7 +50,7 @@ usuarios_db = {
             "direccion":"avenida siempre viva 123",
             "telefono":9999999,
             "email":"cristiansito@gmail.com",
-            "observaciones":"muy cansón"})
+            "observaciones":"ninguna"})
 
 }
 

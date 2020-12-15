@@ -8,6 +8,19 @@ from fastapi.middleware.cors import CORSMiddleware
 
 hotel = FastAPI()
 
+origins = [
+    "http://localhost",
+    "http://localhost:8080"
+]
+
+hotel.add_middleware(
+    CORSMiddleware,
+    allow_origins = origins,
+    allow_credentials = True,
+    allow_methods = ["*"],
+    allow_headers = ["*"],
+)
+
 
 @hotel.get("/") #carpeta raiz del sitio                                        
 async def home():   # funcion home asíncrona
@@ -25,7 +38,7 @@ async def auth_user(cliente_ingresado: ClienteIn):
     if cliente_ingresado.contrasena != cliente_en_bd.contrasena:
         return {"Cliente autenticado": False}
 
-    return [{"Autenticado": True}, cliente_en_bd] # si quiero mostrar solo el email y el celular
+    return {"Autenticado": True} # si quiero mostrar solo el email y el celular
 
 
 @hotel.get("/cliente/info/{cliente_ingresado}")

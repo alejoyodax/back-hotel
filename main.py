@@ -11,7 +11,7 @@ hotel = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:8080",
-    "https://reserva-hotel-appvue.herokuapp.com/"
+    "https://reserva-hotel-appvue.herokuapp.com"
 ]
 
 hotel.add_middleware(

@@ -16,22 +16,22 @@ class ClienteInDB(BaseModel):
 usuarios_db = Dict[int, ClienteInDB]
 
 usuarios_db = {
-    "alejoyodax": ClienteInDB(**{
+    "alejo": ClienteInDB(**{
             "cedula":"123456789",
-            "contrasena":"asd123",
-            "username":"alejoyodax",
+            "contrasena":"12345",
+            "username":"alejo",
             "nombre":"alejandro",
             "apellido":"silva",
             "apellido2":"jaramillo",
             "direccion":"calle falsa 123",
-            "telefono":333333,
+            "telefono":33333333,
             "email":"alejoyodax@gmail.com",
             "observaciones":"ninguna"}),
 
-    "juanito": ClienteInDB(**{
+    "juan": ClienteInDB(**{
             "cedula":"12345",
-            "contrasena":"asd123",
-            "username":"juanito",
+            "contrasena":"12345",
+            "username":"juan",
             "nombre":"juan",
             "apellido":"perez",
             "apellido2":"arnoldo",
@@ -42,28 +42,15 @@ usuarios_db = {
 
     "pepito": ClienteInDB(**{
             "cedula":"123456789",
-            "contrasena":"asd123",
+            "contrasena":"12345",
             "username":"pepito",
             "nombre":"pepe",
             "apellido":"garcía",
             "apellido2":"murcia",
             "direccion":"avenida siempre viva 123",
             "telefono":9999999,
-            "email":"cristiansito@gmail.com",
-            "observaciones":"ninguna"}),
-
-    "cesarmatrix": ClienteInDB(**{
-            "cedula":"22222222",
-            "contrasena":"asd123",
-            "username":"cesarmatrix",
-            "nombre":"cesar",
-            "apellido":"silva",
-            "apellido2":"------",
-            "direccion":"calle falsa 123",
-            "telefono":555555,
-            "email":"cesar@gmail.com",
+            "email":"pepe@gmail.com",
             "observaciones":"ninguna"})
-
 }
 
 def get_cliente(username:str):

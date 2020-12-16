@@ -50,6 +50,18 @@ usuarios_db = {
             "direccion":"avenida siempre viva 123",
             "telefono":9999999,
             "email":"cristiansito@gmail.com",
+            "observaciones":"ninguna"}),
+
+    "cesarmatrix": ClienteInDB(**{
+            "cedula":"22222222",
+            "contrasena":"asd123",
+            "username":"cesarmatrix",
+            "nombre":"cesar",
+            "apellido":"silva",
+            "apellido2":"------",
+            "direccion":"calle falsa 123",
+            "telefono":555555,
+            "email":"cesar@gmail.com",
             "observaciones":"ninguna"})
 
 }

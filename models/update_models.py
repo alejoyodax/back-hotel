@@ -18,3 +18,15 @@ class UpdateOut(BaseModel):
     telefono: int
     email: str
     observaciones: str
+
+class ClienteCreado(BaseModel):
+    cedula: int
+    contrasena: str
+    username: str
+    nombre: str
+    apellido: str
+    apellido2: str
+    direccion: str
+    telefono: int
+    email: str
+    observaciones: str

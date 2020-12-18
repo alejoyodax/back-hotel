@@ -1,4 +1,4 @@
-from models.update_models import UpdateIn
+from models.update_models import ClienteCreado, UpdateIn
 from db.cliente_db import ClienteInDB, get_cliente, usuarios_db
 from models.user_models import ClienteIn, ClienteOut
 import datetime
@@ -66,12 +66,30 @@ async def update_info_cliente(cliente_ingresado: UpdateIn):
     cliente_en_bd.telefono = cliente_ingresado.telefono
     cliente_en_bd.email = cliente_ingresado.email
 
-    return {"Cliente actualizado": True}
+    return {"Actualizado": True}
         
 @hotel.get("/cliente/all")
 async def show_all_users():
     return usuarios_db
 
+###############################################
+###############################################
+# CREAR CLIENTE ##############################
+##############################################
+
+@hotel.put("/crear-cliente")
+async def crear_cliente(cliente_ingresado: ClienteCreado):
+
+    cliente_en_bd = get_cliente(cliente_ingresado.username)
+
+    if(cliente_en_bd != None ):
+        
+        
+        
+        return {"Cliente-creado": True}
+
+    
+    return {"Cliente-creado": False}
 
 
 #@hotel.get("/user/")
